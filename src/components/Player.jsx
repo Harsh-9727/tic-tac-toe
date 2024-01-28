@@ -1,12 +1,15 @@
 
 import { useState } from "react"
-export default function Player ({ name , symbol , activePlayer}) {
+export default function Player ({ name , symbol , activePlayer, onChangeName}) {
 
   const [currName, setCurrName] = useState(name);
   const [isEditing, setIsEditing] = useState(false);
 
   const handleEditclick = () => {
     setIsEditing(prevIsEditing => !prevIsEditing);
+
+    if(isEditing)
+    onChangeName(symbol, currName);
   };
 
   const handleOnChange = (event) => {
