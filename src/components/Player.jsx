@@ -13,7 +13,6 @@ export default function Player ({ name , symbol , activePlayer, onChangeName}) {
   };
 
   const handleOnChange = (event) => {
-    console.log("Value",currName);
     setCurrName(event.target.value);
   };
 
